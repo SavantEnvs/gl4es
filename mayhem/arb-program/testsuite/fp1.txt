@@ -1,0 +1,10 @@
+!!ARBfp1.0
+PARAM p = program.env[0];
+TEMP r;
+TXB r, fragment.texcoord[0], texture[2], CUBE;
+KIL r;
+SIN r.x, p.x; COS r.y, p.y; SCS r.xy, p.z;
+DP3 r.w, r, p; DPH r.z, r, p; SUB r, r, p;
+MOV result.depth.z, fragment.position.z;
+MOV result.color, r;
+END

@@ -1,0 +1,12 @@
+# gl4es: ARB program converter (mayhem/harnesses/fuzz_arbprogram.c)
+project: savantenvs/gl4es
+target: arb-program
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/arb-program/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_arbprogram
+    libfuzzer: true
+    timeout: 5

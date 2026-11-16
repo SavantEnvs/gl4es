@@ -1,0 +1,12 @@
+# gl4es: GLSL shader converter (mayhem/harnesses/fuzz_shader.c)
+project: savantenvs/gl4es
+target: glsl-shader
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/glsl-shader/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_shader
+    libfuzzer: true
+    timeout: 5

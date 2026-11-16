@@ -1,0 +1,12 @@
+# gl4es: texture pixel conversion (mayhem/harnesses/fuzz_teximage.c)
+project: savantenvs/gl4es
+target: teximage
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/teximage/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_teximage
+    libfuzzer: true
+    timeout: 5

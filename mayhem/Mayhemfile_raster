@@ -1,0 +1,12 @@
+# gl4es: glBitmap/glDrawPixels raster path (mayhem/harnesses/fuzz_raster.c)
+project: savantenvs/gl4es
+target: raster
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/raster/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_raster
+    libfuzzer: true
+    timeout: 5

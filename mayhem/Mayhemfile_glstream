@@ -1,0 +1,12 @@
+# gl4es: GL 1.x command stream (mayhem/harnesses/fuzz_glstream.c)
+project: savantenvs/gl4es
+target: glstream
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/glstream/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_glstream
+    libfuzzer: true
+    timeout: 5

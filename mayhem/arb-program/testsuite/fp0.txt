@@ -1,0 +1,9 @@
+!!ARBfp1.0
+OPTION ARB_fog_linear;
+TEMP c, t;
+TEX t, fragment.texcoord[0], texture[0], 2D;
+TXP c, fragment.texcoord[1], texture[1], 2D;
+LRP c, fragment.color.primary, t, c;
+CMP c, c, -c, c;
+MUL_SAT result.color, c, program.local[0];
+END

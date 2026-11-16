@@ -1,0 +1,12 @@
+# gl4es: S3TC/DXT texture decoder (mayhem/harnesses/fuzz_compressed_tex.c)
+project: savantenvs/gl4es
+target: compressed-tex
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/compressed-tex/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_compressed_tex
+    libfuzzer: true
+    timeout: 5
